@@ -2,6 +2,7 @@ id: agentic-postgres-dev
 name: Agentic Postgres Dev
 version: 0.1.0
 type: infra
+
 installsInto: app/infra
 
 ownedPaths:
@@ -14,18 +15,19 @@ optionalDependencies:
   - agentic-fullstack-composition
 
 provides:
-  - postgres-development-runtime
-  - local-database-foundation
-  - database-bootstrap-configuration
+  - postgres-development-foundation
+  - local-database-bootstrap
+  - infra-structure
 
 requires:
   - docker
   - docker-compose
 
 postInstallChecks:
-  - postgres configuration files exist
-  - docker compose configuration is valid
-  - database service startup command is valid
+  - infrastructure directory exists
+  - database configuration files are present
+  - database startup command is valid
+  - compose configuration is valid when applicable
 
 tags:
   - agentic
